@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Shantiban App</string>
+    <string name="annual_maintenance">Annual Maintenance</string>
+
+    <string name="title_section1"> Home </string>
+    <string name="title_section2"> Income </string>
+    <string name="title_section3"> Expenditure </string>
+    <string name="title_section4">Statistics</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Pie Chart Demo</string>
+    <string name="str_btn_chart">Pie Chart</string>
+    <string name="income_statistics">Income Statistics</string>
+
+
+    <string-array name="income_types">
+        <item>Annual Maintenance</item>
+        <item>Clubhouse</item>
+        <item>Non-Occupancy</item>
+        <item>Plot Sale</item>
+        <item>Bank F.D Interest</item>
+        <item>Savings Bank Interest</item>
+        <item>Miscellaneous</item>
+    </string-array>
+
+    <string-array name="statistics_types">
+        <item>Income</item>
+        <item>Expenditure</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

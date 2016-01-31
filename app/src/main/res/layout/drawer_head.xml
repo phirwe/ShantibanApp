@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/drawer_head_text"
+    android:textColor="#ffffdd"
+    android:textSize="22sp"
+    android:layout_marginTop="5dp"
+    android:gravity="center"
+    android:paddingTop="7dp"
+    android:minHeight="35sp"
+    android:paddingLeft="5dp"
+    android:paddingBottom="8dp"
+    android:text="Menu"
+    />
