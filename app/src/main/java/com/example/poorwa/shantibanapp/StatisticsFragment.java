@@ -1,8 +1,17 @@
 package com.example.poorwa.shantibanapp;
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,12 +32,45 @@ import org.achartengine.renderer.SimpleSeriesRenderer;
 /**
  * Created by poorwa on 31/1/16.
  */
-public class StatisticsFragment extends Fragment {
+public class StatisticsFragment extends DialogFragment {
 
     View myView;
     ListView statisticsList;
     ArrayAdapter<String> statisticsAdapter;
     String[] statisticsArray;
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the Builder class for convenient dialog construction
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+            builder.setTitle("Statistics")
+                    .setItems(R.array.statistics_types, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int position) {
+                            //dialog.setBackgroundColor(Color.parseColor("#222222"));
+                            // The 'which' argument contains the index position
+                            // of the selected item
+
+                            switch(position){
+                                case 0:
+                                    incomeStatistics();
+                                    break;
+                                case 1:
+
+                                    break;
+                            }
+
+
+                        }
+                    });
+            return builder.create();
+
+
+        }
+
+
+
+/*
 
     @Nullable
     @Override
@@ -60,6 +102,7 @@ public class StatisticsFragment extends Fragment {
         return myView;
 
     }
+*/
 
 
     public void incomeStatistics() {

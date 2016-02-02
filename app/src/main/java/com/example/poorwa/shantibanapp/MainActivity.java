@@ -116,26 +116,44 @@ public class MainActivity extends AppCompatActivity
         // update the main content by replacing fragments
 
         Fragment myFragment = null;
+        FragmentManager fragmentManager;
         switch(position) {
             case 0:
                 myFragment = new HomeFragment();
                 mTitle = getString(R.string.title_section1);
+                fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, myFragment)
+                        .commit();
                 break;
             case 1:
                 myFragment = new HomeFragment();
                 mTitle = getString(R.string.title_section1);
+                fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, myFragment)
+                        .commit();
                 break;
             case 2:
                 myFragment = new IncomeFragment();
                 mTitle = getString(R.string.title_section2);
+                fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, myFragment)
+                        .commit();
                 break;
             case 3:
                 myFragment = new ExpenditureFragment();
                 mTitle = getString(R.string.title_section3);
+                fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, myFragment)
+                        .commit();
                 break;
             case 4:
-                myFragment = new StatisticsFragment();
-                mTitle = getString(R.string.title_section4);
+                StatisticsFragment dialog = new StatisticsFragment();
+                android.app.FragmentManager manager = getFragmentManager();
+                dialog.show(manager, "StatsFrag");
                 break;/*
             case 4:
                 myFragment = new TransferFragment();
@@ -147,10 +165,7 @@ public class MainActivity extends AppCompatActivity
                 myFragment = new EducationFragment();*/
 
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, myFragment)
-                .commit();
+
 
     }
 

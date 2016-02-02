@@ -1,5 +1,6 @@
 package com.example.poorwa.shantibanapp;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,6 +21,7 @@ public class IncomeFragment extends Fragment {
     ListView incomeList;
     ArrayAdapter<String> incomeAdapter;
     String[] incomeArray;
+    Intent intent;
 
     @Nullable
     @Override
@@ -36,14 +38,32 @@ public class IncomeFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch(position) {
                     case 0:
-                        Intent intent = new Intent(getActivity().getApplicationContext(), AnnualMaintenanceActivity.class);
+                        intent = new Intent(getActivity().getApplicationContext(), AnnualMaintenanceActivity.class);
                         startActivity(intent);
                         break;
                     case 1:
-                        Toast.makeText(getActivity().getApplicationContext(), incomeArray[1], Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getActivity().getApplicationContext(), ClubHouseActivity.class);
+                        startActivity(intent);
                         break;
                     case 2:
-                        Toast.makeText(getActivity().getApplicationContext(), incomeArray[2], Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getActivity().getApplicationContext(), NonOccupancyActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(getActivity().getApplicationContext(), PlotSaleActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(getActivity().getApplicationContext(), BankFdInterestActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(getActivity().getApplicationContext(), SavingsBankInterestActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent = new Intent(getActivity().getApplicationContext(), MiscellaneousActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         Toast.makeText(getActivity().getApplicationContext(), "Apoorva Manda", Toast.LENGTH_SHORT).show();

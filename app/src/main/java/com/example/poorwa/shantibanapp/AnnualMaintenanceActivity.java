@@ -24,8 +24,8 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
     RadioGroup paymentType;
     RadioButton advance, late, onTime;
     LinearLayout form, lateFeeLayout;
-    Income income = new Income();
-    IncomeDBInterface dbInterface;
+    AnnualMaintenance income = new AnnualMaintenance();
+    AnnualMaintenanceDBInterface dbInterface;
     Context context = this;
     EditText memberName, plotNumber, amountPaid, lateFeeFine, totalAmount;
 
@@ -50,7 +50,7 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
 
 
         save = (Button) findViewById(R.id.save);
-        dbInterface = new IncomeDBInterface(context);
+        dbInterface = new AnnualMaintenanceDBInterface(context);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
