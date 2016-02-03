@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity
                         .commit();
                 break;
             case 4:
-                StatisticsFragment dialog = new StatisticsFragment();
+                StatisticsDialog dialog = new StatisticsDialog();
                 android.app.FragmentManager manager = getFragmentManager();
                 dialog.show(manager, "StatsFrag");
                 break;/*

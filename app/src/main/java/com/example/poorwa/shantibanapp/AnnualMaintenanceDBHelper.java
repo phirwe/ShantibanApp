@@ -16,7 +16,6 @@ public class AnnualMaintenanceDBHelper {
         public static final String PAYMENT_DATE = "payment_date";
         public static final String AMOUNT_PAID = "amount_paid";
         public static final String LATE_FEE_FINE = "late_fee_fine";
-        public static final String TOTAL_AMOUNT = "total_amount";
         public static final String TABLE_NAME = "AnnualMaintenance";
         public static final String DATABASE_NAME = "PARS";
     }

@@ -27,7 +27,7 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
     AnnualMaintenance income = new AnnualMaintenance();
     AnnualMaintenanceDBInterface dbInterface;
     Context context = this;
-    EditText memberName, plotNumber, amountPaid, lateFeeFine, totalAmount;
+    EditText memberName, plotNumber, amountPaid, lateFeeFine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,6 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
         plotNumber = (EditText) findViewById(R.id.plotNumber);
         amountPaid = (EditText) findViewById(R.id.amountPaid);
         lateFeeFine = (EditText) findViewById(R.id.lateFee);
-        totalAmount = (EditText) findViewById(R.id.totalAmount);
 
 
 
@@ -66,7 +65,6 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
                     income.setPaymentDate(dateButton.getText().toString());
                     income.setAmountPaid(amountPaid.getText().toString());
                     income.setLateFeeFine(lateFeeFine.getText().toString());
-                    income.setTotalAmount(totalAmount.getText().toString());
 
                     dbInterface.insert(income);
 
@@ -95,8 +93,6 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
             return false;
         if(late.isChecked() && lateFeeFine.getText().toString().isEmpty())
             return false;
-        if(!(advance.isChecked() || onTime.isChecked()) && totalAmount.getText().toString().isEmpty())
-            return false;
         return true;
     }
 
@@ -105,35 +101,26 @@ public class AnnualMaintenanceActivity extends AppCompatActivity {
         switch(v.getId()) {
             case R.id.late:
                 if(checked) {
+                    lateFeeFine.setText("");
                     lateFeeLayout.setVisibility(View.VISIBLE);
-                    totalAmount.setEnabled(true);
-                    totalAmount.setText("");
                 }
                 else
                     lateFeeLayout.setVisibility(View.GONE);
                 break;
             case R.id.onTime:
                 if(checked) {
-                    totalAmount.setText(amountPaid.getText());
-                    totalAmount.setEnabled(false);
                     lateFeeFine.setText("-1");
                     lateFeeLayout.setVisibility(View.GONE);
                 }
                 else {
-                    totalAmount.setText("");
-                    totalAmount.setEnabled(true);
                 }
                 break;
             case R.id.advance:
                 if(checked) {
-                    totalAmount.setText(amountPaid.getText());
-                    totalAmount.setEnabled(false);
                     lateFeeFine.setText("-1");
                     lateFeeLayout.setVisibility(View.GONE);
                 }
                 else {
-                    totalAmount.setText("");
-                    totalAmount.setEnabled(true);
                 }
                 break;
             default:

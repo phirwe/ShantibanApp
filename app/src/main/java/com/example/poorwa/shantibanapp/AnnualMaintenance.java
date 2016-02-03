@@ -5,7 +5,7 @@ package com.example.poorwa.shantibanapp;
  */
 public class AnnualMaintenance {
     private String memberName, plotNumber, paymentDate, amountPaid,
-    lateFeeFine, totalAmount;
+    lateFeeFine;
 
     public AnnualMaintenance() {
     }
@@ -48,13 +48,5 @@ public class AnnualMaintenance {
 
     public void setLateFeeFine(String lateFeeFine) {
         this.lateFeeFine = lateFeeFine;
-    }
-
-    public String getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(String totalAmount) {
-        this.totalAmount = totalAmount;
     }
 }
